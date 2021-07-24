@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <mat-toolbar>
+        <h1 style="color: black; font-size: 22px;">Welocome to Database Management System</h1>
+        <button class="btn logoutbtn" (click)="logout()">Logout</button>
+    </mat-toolbar>
+
+    <div class="content">
+        <div class="container">
+            <div class="title">Update Courses Details</div>
+            <form #courseData="ngForm" (ngSubmit)="sendCourseData(courseData.value)">
+                <div  class="user-details">
+                    <div class="form-group input-box">
+                        <label>Enter Course Name</label>
+                        <input type="text" name="cname" class="form-control" #refFullname="ngModel" [ngModel]="cObj?.cname" ngModel required>
+                        <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                            <div *ngIf="refFullname.hasError('required')">
+                                this field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group input-box">
+                        <label>Enter Course Fees</label>
+                        <input type="text" name="cfees" class="form-control" #refFullname="ngModel" [ngModel]="cObj?.cfees" ngModel required>
+                        <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                            <div *ngIf="refFullname.hasError('required')">
+                                this field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group input-boxs">
+                        <label>Enter Course Duration</label>
+                        <input type="text" name="duration" class="form-control" #refFullname="ngModel" [ngModel]="cObj?.duration" ngModel required>
+                        <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                            <div *ngIf="refFullname.hasError('required')">
+                                this field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group input-boxs">
+                        <select name="monyer" class="form-control selects" #refQuali="ngModel" [ngModel]="cObj?.monyer" ngModel required>
+                            <option value="">Select</option>
+                            <option value="months">months</option>
+                            <option value="year">years</option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf="refQuali.invalid && refQuali.touched">
+                            <div *ngIf="refQuali.hasError('required')">
+                            this is required field
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="form-group input-box">
+                        <label>Enter Course Trainer Name</label>
+                        <input type="text" name="trainerName" class="form-control" #refFullname="ngModel" [ngModel]="cObj?.trainerName" ngModel required>
+                        <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                            <div *ngIf="refFullname.hasError('required')">
+                                this field is required
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <button type="submit" class="input-box btn">Update Data</button>           
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

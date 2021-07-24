@@ -1,0 +1,27 @@
+
+mat-toolbar{
+    display: none;
+}
+span{
+    cursor: pointer;
+}
+@media screen and (min-width:576px) and (max-width:767px) {
+    body{
+        min-width: 1340px;
+    }
+    mat-sidenav{
+        display: none;
+    }
+    mat-toolbar{
+        display: block;
+        background-color: #3B9BBF;
+    }
+    .navbars{
+        justify-content: space-between;
+    }
+    span{
+        margin-left: 2.5rem;
+        padding-right: 3rem;
+    }
+    
+}

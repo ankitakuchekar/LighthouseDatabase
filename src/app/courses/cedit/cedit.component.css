@@ -1,0 +1,117 @@
+mat-toolbar{
+    background-color: #f24097;
+}
+.logoutbtn{
+    background-color: #3B9BBF;
+    color: black;
+    font-size: 20px;
+    margin-left: 600px;
+  }
+  .container{
+    max-width: 800px;
+    width: 100%;
+    background-color:transparent;
+    padding: 30px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    margin-top: 20px;
+  background: #3B9BBF;
+  }
+  .container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+  .container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+  /* background: linear-gradient(135deg, #71b7e6, #9b59b6);*/
+  }
+  form .user-details{
+    margin-top: 20px;
+  }
+  form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 1 - 10px);
+  }
+form .user-details .input-boxs{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+  }
+  form .user-details .selects{
+    margin-left: 380px;
+    margin-top: -53px;  
+  }
+  label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+  }
+  select option{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+  }
+  .user-details .input-box input:focus,
+  .user-details .input-box input:focus{
+    border-color: #f24097;
+  }
+  form .button{
+    height: 45px;
+    margin: 35px 0
+  }
+  form button{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f24097;
+    margin-top: 20px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+  }
+  form button:hover{
+      border: 3px solid #f24097;
+      background: transparent;
+  }
+  .alert{
+    background: transparent;
+    border: none;
+    color: red;
+    padding-top: 1px;
+  }
+
+  @media screen and (min-width:576px) and (max-width:767px) {
+    body{
+        min-width: 690px;
+    }
+    mat-toolbar{
+      width: 690px;
+    }
+    mat-toolbar span{
+     background-color: #3B9BBF;
+    }
+    .logoutbtn{
+      margin-left: 100px;
+    }
+    
+  form .user-details .selects{
+    margin-left: 320px;  
+  }
+  }    
+  

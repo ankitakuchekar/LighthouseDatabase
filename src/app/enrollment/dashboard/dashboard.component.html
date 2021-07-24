@@ -1,0 +1,99 @@
+
+<mat-toolbar>
+  <h1>Welocome to Database Management System</h1>
+  <button class="btn logoutbtn" (click)="logout()">Logout</button>
+</mat-toolbar>
+<div class="row">
+    <div class="col-sm-8">
+        <button class="btn addbutton" routerLink="add"> <i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+    </div>
+    <div class="col-sm-4">
+        <input type="text" class="searchdata" placeholder="search here" name="search" [(ngModel)]="searches">
+    </div>
+</div>
+<hr>
+<h1 style="text-align: center; background-color: darkgray;">Student Enrollment Data</h1>
+<hr>
+<table class="table table-striped table-hover table-center">
+    <thead style="text-align: center; font-size: 19px;">
+        <th>ID</th>
+        <th (click)="changeOrder()">Fullname</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </thead>
+    <tbody style="text-align: center;">
+        <tr *ngFor="let student of studentArray | filter:searches | paginate: { itemsPerPage: 4, currentPage: p } | orderBy: order:reverse">
+            <td>{{student.id}}</td>
+            <td>{{student.fullname}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.contactno}}</td>
+            <td>        
+                <button type="button" class="btn btn-outline-primary" (click)="openModal(template)">View <i class="fa fa-eye" aria-hidden="true"></i> </button> &nbsp; 
+                <button class="btn btn-outline-success" type="button" [routerLink]="['/enrollment/enrolledit',student.id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button> &nbsp;
+                <button class="btn btn-outline-danger" type="button" (click)="deletedata(student.id)" >Delete<i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </td>
+            <ng-template #template>
+              <div class="modal-header">
+                <h4 class="modal-title pull-left" style="color:#f24097; font-size: 20px;">{{student.fullname}}</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-bordered" style="text-align: left; margin: auto; border: 1px solid black; background-color: #caf1ff; width: 450px;font-size: 17px;">
+                  <tr>
+                      <td>Id:</td> <td>{{student.id}}</td>
+                  </tr>                  
+                  <tr>
+                      <td>Email:</td> <td>{{student.email}}</td>
+                  </tr>
+                  <tr>
+                      <td>Contact No:</td> <td>{{student.contactno}}</td>
+                  </tr>
+                  <tr>
+                      <td>Qualification:</td> <td>{{student.qualification}}</td>
+                  </tr>
+                  <tr>
+                    <td>Specification</td> <td>{{student.specific}}</td>
+                  </tr>
+                  <tr>
+                    <td>Eduacation Status:</td> <td>{{student.statusedu}}</td>
+                  </tr>
+                  <tr>
+                    <td>Year of Passsing:</td> <td>{{student.yearpass}}</td>
+                  </tr>
+                  <tr>
+                    <td>College Name:</td> <td>{{student.clgname}}</td>
+                  </tr>
+                  <tr>
+                    <td>City</td> <td>{{student.city}}</td>
+                  </tr>
+                  <tr>
+                    <td>Work Experience:</td> <td>{{student.workexp}}</td>
+                  </tr>
+                  <tr>
+                    <td>Orgnization:</td> <td>{{student.org}}</td>
+
+                  </tr>
+                  <tr>
+                    <td>Lighthouse Branch:</td> <td>{{student.lhbranch}}</td>
+                  </tr>
+                  <tr>
+                    <td>Course</td> <td>{{student.course}}</td>
+                  </tr>
+                  <tr>
+                    <td>Batch:</td> <td>{{student.batch}}</td>
+                  </tr>
+                  <tr>
+                    <td>Reference:</td> <td>{{student.wheredid}}</td>
+                  </tr>
+              </table>
+              </div>
+            </ng-template>
+          </tr>    
+    </tbody>
+</table>
+<pagination-controls style="float: right;" (pageChange)="p = $event"></pagination-controls>
+
+
+  

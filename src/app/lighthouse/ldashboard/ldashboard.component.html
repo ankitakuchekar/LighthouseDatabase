@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <mat-toolbar>
+    <h1>Welocome to Database Management System</h1>
+    <button class="btn logoutbtn" (click)="logout()">Logout</button>
+  </mat-toolbar>
+  <div class="row">
+      <div class="col-sm-8">
+          <button class="btn addbutton" routerLink="ladd"> <i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+      </div>
+      <div class="col-sm-4">
+          <input type="text" class="searchdata" placeholder="search here" name="search" [(ngModel)]="searches">
+      </div>
+  </div>
+  <hr>
+  <h1 class="title">Lighthouse Data</h1>
+<hr>
+  <table class="table table-striped table-hover table-center">
+    <thead style="text-align: center; font-size: 19px;">
+      <th>Id</th>
+      <th (click)="changeOrder()">Lighthouse Name</th>
+      <th>Lighthouse Contact</th>
+    </thead>
+    <tbody style="text-align: center;">
+      <tr *ngFor="let lighthouse of lighthouseArray | filter:searches | paginate: { itemsPerPage: 4, currentPage: p } | orderBy: order:reverse">
+        <td>{{lighthouse.id}}</td>
+        <td>{{lighthouse.lname}}</td>
+        <td>{{lighthouse.lcontact}}</td>
+      <td>        
+        <button type="button" class="btn btn-outline-primary" (click)="openModal(template)">View <i class="fa fa-eye" aria-hidden="true"></i> </button> &nbsp; 
+        <button class="btn btn-outline-success" type="button" [routerLink]="['/lighthouse/ledit',lighthouse.id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button> &nbsp;
+        <button class="btn btn-outline-danger" type="button" (click)="deletedata(lighthouse.id)" >Delete<i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    </td>
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left" style="color:#f24097; font-size: 20px;">Lighthouse Details</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered" style="text-align: left; margin: auto; border: 1px solid black; background-color: #caf1ff; width: 450px;font-size: 17px;">
+          <tr>
+              <td>Id:</td> <td>{{lighthouse.id}}</td>
+          </tr>        
+          <tr>
+            <td>Lighthouse Name:</td> <td>{{lighthouse.lname}}</td>
+          </tr>          
+          <tr>
+            <td>Lighthouse Contact:</td> <td>{{lighthouse.lcontact}}</td>
+          </tr>
+          <tr>
+            <td>Lighthouse Address:</td> <td>{{lighthouse.laddress1}},{{lighthouse.laddress2}},{{lighthouse.laddresscity}}-{{lighthouse.laddresspin}},{{lighthouse.laddressstate}}.</td>
+          </tr>
+
+      </table>
+      </div>
+    </ng-template>
+  </tr>    
+    </tbody>
+  </table>
+
+  <pagination-controls style="float: right;" (pageChange)="p = $event"></pagination-controls>
+
+</body>
+</html>

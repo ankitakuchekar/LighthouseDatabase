@@ -1,0 +1,33 @@
+<mat-toolbar class="navbars">
+    <app-firstpage *ngIf="_router.url!='/' && _router.url!='/login' && _router.url!='**'"></app-firstpage>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        
+        <app-nav *ngIf="_router.url!='/' && _router.url!='/login' && _router.url!='**'"></app-nav>
+        <marquee behavior="" direction="up" scrollamount="7" height="510px">
+            <hr>
+            <img src="../assets/journey.png" alt="" width="160px">
+            <hr>
+            <img src="../assets/journey1.png" alt="" width="160px">
+            <hr>
+            <img src="../assets/journey2.png" alt="" width="160px">
+            <hr>
+            <img src="../assets/journey3.png" alt="" width="160px">
+            <hr>
+            <img src="../assets/journey4.png" alt="" width="160px">
+            <hr>
+            <img src="../assets/journey5.png" alt="" width="160px">
+            <hr>
+            <img src="../assets/journey6.png" alt="" width="160px">
+            <hr>
+        </marquee>
+          
+    </mat-sidenav>
+        <router-outlet></router-outlet>
+</mat-sidenav-container>
+    
+<!--
+<app-nav *ngIf="_router.url!='/' && _router.url!='/login' && _router.url!='**'"></app-nav>
+-->

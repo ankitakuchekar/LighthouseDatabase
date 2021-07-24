@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span>Welcome to Lighthouse Database Management Project</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="container-fluid">
+        <marquee behavior="" direction="">Lighthouse is the project of Pune City Connect. The main objective of Light House Project is to provide the underprivileged youth of Pune a chance to explore possibilities for enhancing their skills and pursuing a meaningful career.</marquee>
+       <div class="row">
+            <div class="col-md-6 carosal">
+              <ngb-carousel #carousel [interval]="6000" *ngIf="images" class="no-indicators">
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[0]" alt="Random first slide">
+                  </div>
+                 </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[1]" alt="Random second slide" class="sliderclass">
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[2]" alt="Random fourth slide">
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[3]" alt="Random second slide" class="sliderclass">
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
+                    <img [src]="images[4]" alt="Random second slide" class="sliderclass">
+                  </div>
+                </ng-template>
+               
+              </ngb-carousel>   
+            </div>
+            <div class="login">
+                <div class="loginform">
+                    <h3>Login Here to Enter</h3>
+                <form>
+                    <input type="text" placeholder="Enter Username" name="userId" [(ngModel)]="userId" class="form-control" #refuser="ngModel" ngModel required> 
+                    <div class="alert alert-danger" *ngIf="refuser.invalid && refuser.touched">
+                      <div *ngIf="refuser.hasError('required')">
+                      this is required field
+                      </div>
+                  </div>      
+                    <br>
+                    <input type="password" placeholder="Enter Password" name="userpassword" [(ngModel)]="userpassword"  class="form-control" #refpass="ngModel" ngModel required> 
+                    <div class="alert alert-danger" *ngIf="refpass.invalid && refpass.touched">
+                      <div *ngIf="refpass.hasError('required')">
+                      this is required field
+                      </div>
+                  </div>      
+             <br>
+                    <button class="btn btn-outline-primary" (click)="checkdata()">Login</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<router-outlet></router-outlet>
+
+
+<!--
+                <ngb-carousel #carousel [interval]="6000" *ngIf="images" class="no-indicators">
+                    <ng-template ngbSlide>
+                      <div class="picsum-img-wrapper">
+                        <img [src]="images[0]" alt="Random first slide" style="height: 300px; width: 450px; padding-left: 100px;">
+                      </div>
+                     </ng-template>
+                    <ng-template ngbSlide>
+                      <div class="picsum-img-wrapper">
+                        <img [src]="images[1]" alt="Random second slide" style="height: 300px; width: 500px;">
+                      </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                      <div class="picsum-img-wrapper" style="height: 300px; width: 500px;">
+                        <img [src]="images[2]" alt="Random fourth slide">
+                      </div>
+                    </ng-template>
+                  </ngb-carousel>
+
+                  <div class="alert alert-primary" role="alert">
+                    This is a primary alert—check it out!
+                  </div>
+-->

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+mat-toolbar{
+    background-color: #3B9BBF;
+    height: 50px;
+}
+span{
+    margin: auto;
+    font-size: 28px;
+    font-weight: bold;
+}
+.container-fluid{
+    position: absolute;
+    height: 800px;
+}
+marquee{
+    color: #f24097;
+    font-size: 18px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 30px;
+}
+.carosal{
+    position: relative;
+    height: 320px;
+    margin-top: 100px;
+    padding-left: 60px;
+    margin-left: 10px;
+    /*border: 2px solid #3B9BBF;*/
+}
+ngb-carousel {
+    max-width: 91%;
+   /* height:500px;*/
+}
+ngb-carousel img{
+    width: 100%;
+}
+.no-indicators .carouselindicators {
+    display: none;
+}
+.login{
+    height: 500px;
+    width: 550px;
+    padding-left: 80px;
+}
+.loginform{
+    border: 2px solid #3B9BBF;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-top: 110px;
+    margin-left: 10px;
+    padding:50px;
+    padding-top: 30px;
+    border-radius: 20px;
+    background-color: #3B9BBF;
+}
+h3{
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+input{
+    margin-bottom: 1px;
+    height: 40px;
+    width: 190px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+button{
+    height: 40px;
+    width: 192px;
+    color: black;
+    border: 2px solid #f24097;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+button:hover{
+    border: 2px solid #f24097;
+    background-color: #f24097;
+    color: black;
+}
+.alert{
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 14px;
+    margin-top: -4px;
+  }
+
+@media screen and (min-width:576px) and (max-width:767px) {
+    body{
+        min-width: 740px;
+    }
+    mat-toolbar span{
+        font-size: 20px;
+    }
+    marquee{
+        margin-left: 100px;
+        margin-right: -40px;
+        margin-top: 30px;
+    }    
+    .carosal{
+        margin-left: 100px;
+    }
+    .loginform{
+        margin-left: 150px;
+    }
+}

@@ -1,0 +1,11 @@
+.navbtn{
+ margin-top: 60px;
+ margin-bottom: 160px;
+}
+button{
+    color: #05104e;
+}
+button:hover{
+    font-size: 20px;
+    color:#05104e;
+}

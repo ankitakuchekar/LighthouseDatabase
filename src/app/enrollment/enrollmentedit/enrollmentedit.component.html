@@ -1,0 +1,190 @@
+<mat-toolbar>
+    <h1 style="color: black; font-size: 22px;">Welocome to Database Management System</h1>
+    <button style="float: right;" class="btn logoutbtn" (click)="logout()">Logout</button>
+  </mat-toolbar>
+<div class="content">
+    <div class="container">
+        <div class="title">Update Student Data</div>
+    <form #studentdata="ngForm" (ngSubmit)="sendStudentData(studentdata.value)">
+        <div class="user-details">
+        <div class="form-group input-box">
+            <label>Enter Fullname</label>
+            <input type="text" name="fullname" class="form-control" #refFullname="ngModel" [pattern]="namePattern" [ngModel]="enrollmentObj?.fullname" ngModel required>
+            <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                <div *ngIf="refFullname.hasError('required')">
+                    this field is required
+                </div>
+                <div *ngIf="refFullname.hasError('pattern')">
+                    Fullname must contain only character and should have at least 3 characters
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box">
+            <label>Enter Contact Number</label>
+            <input type="text" name="contactno" class="form-control" #refContact="ngModel" [pattern]="contactPattern" [ngModel]="enrollmentObj?.contactno" ngModel required>
+            <div class="alert alert-danger" *ngIf="refContact.invalid && refContact.touched">
+                <div *ngIf="refContact.hasError('required')">
+                    this field is required
+                </div>
+                <div *ngIf="refContact.hasError('pattern')">
+                    Fullname must contain only character and should have at least 3 characters
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box">
+            <label>Enter Email</label>
+            <input type="text" name="email" class="form-control" #refEmail="ngModel" [pattern]="emailPattern" [ngModel]="enrollmentObj?.email" ngModel required>
+            <div class="alert alert-danger" *ngIf="refEmail.invalid && refEmail.touched">
+                <div *ngIf="refEmail.hasError('required')">
+                    this is required Field
+                </div>
+                <div *ngIf="refEmail.hasError('pattern')">
+                    Please Enter Valid Mail Address
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box">
+            <label>Enter Qualification</label>
+            <select name="qualification" class="form-control" [(ngModel)]="selectedValue" #refQuali="ngModel" [ngModel]="enrollmentObj?.qualification" ngModel required>
+                <option value="">Select Qualification</option>
+                <option value="ssc">SSC</option>
+                <option value="hsc">HSC</option>
+                <option value="bsc">BSc</option>
+                <option value="msc">MSc</option>
+                <option value="bca">Bca</option>
+                <option value="bcs">BCs</option>
+                <option value="be">BE</option>
+                <option value="bcom">BCom</option>
+                <option value="ba">BA</option>
+                <option value="other">Other</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="refQuali.invalid && refQuali.touched">
+                <div *ngIf="refQuali.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box" >
+            <label>Specification</label>
+            <input type="text" name="specific" class="form-control" #refSpecific="ngModel" [ngModel]="enrollmentObj?.specific" ngModel required>
+            <div class="alert alert-danger" *ngIf="refSpecific.invalid && refSpecific.touched">
+                <div *ngIf="refSpecific.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <label class="form-check-label input-box">Select Status of your Eduaction</label>
+        <div class="form-group form-check input-box" >
+            <label class="form-check-label">
+                <input type="radio" name="statusedu" class="form-check-input" [ngModel]="enrollmentObj?.statusedu" [(ngModel)]="status" value="appear" [ngModel]="enrollmentObj?.statusedu" #refStatus="ngModel" ngModel required>Appearing
+            </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-check-label">
+                <input type="radio" name="statusedu" class="form-check-input" [(ngModel)]="status" value="complete" #refStatus="ngModel" ngModel required>Completed
+            </label>
+            <div class="alert alert-danger" *ngIf="refStatus.invalid && refStatus.touched"> 
+                <div *ngIf="refStatus.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box">
+            <label>Year of Passing</label>
+            <select name="yearpass" class="form-control" #refYear="ngModel" [ngModel]="enrollmentObj?.yearpass" ngModel required>
+                <option value="">Year of Passing</option>
+                <option [value]="yp" *ngFor="let yp of yearpassing">{{yp}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="refYear.invalid && refYear.touched"> 
+                <div *ngIf="refYear.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box">
+            <label>Enter College Name</label>
+            <input type="text" name="clgname" class="form-control" #refClg="ngModel" [ngModel]="enrollmentObj?.clgname" ngModel required>
+            <div class="alert alert-danger" *ngIf="refClg.invalid && refClg.touched"> 
+                <div *ngIf="refClg.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box">
+            <label>Enter City</label>
+            <input type="text" name="city" class="form-control" #refCity="ngModel" [ngModel]="enrollmentObj?.city" ngModel required>
+            <div class="alert alert-danger" *ngIf="refCity.invalid && refCity.touched"> 
+                <div *ngIf="refCity.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box">
+            <label>Work Experience</label>
+            <select name="workexp" class="form-control" #refExp="ngModel" [ngModel]="enrollmentObj?.workexp" ngModel required>
+                <option value="">Work Experience</option>
+                <option [value]="we" *ngFor="let we of workexperience">{{we}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="refExp.invalid && refExp.touched"> 
+                <div *ngIf="refExp.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <label class="form-check-label input-box">Select Orgnization</label>
+        <div class="form-group form-check input-box">
+            <label class="form-check-label">
+                <input type="radio" name="org" class="form-check-input" [ngModel]="enrollmentObj?.org" [(ngModel)]="lightorg" value="lighthouse">LightHouse
+            </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-check-label">
+                <input type="radio" name="org" class="form-check-input" [(ngModel)]="lightorg" value="hematiate">Hematite Institute
+            </label>
+        </div>
+        <div class="form-group input-box">
+            <label>LightHouse Branch</label>
+            <select name="lhbranch" class="form-control" #refLbranch="ngModel" [ngModel]="enrollmentObj?.lhbranch" ngModel required>
+                <option value="">Select lighthouse branch</option>
+                <option [value]="lhb" *ngFor="let lhb of lighthousebrnch">{{lhb}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="refLbranch.invalid && refLbranch.touched"> 
+                <div *ngIf="refLbranch.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-box" >
+            <label>Select Courses</label>
+            <select name="course" class="form-control" #refCourse="ngModel" [ngModel]="enrollmentObj?.course" ngModel required>
+                <option value="">Select Course</option>
+                <option [value]="c" *ngFor="let c of courses">{{c}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="refCourse.invalid && refCourse.touched"> 
+                <div *ngIf="refCourse.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <label class="form-check-label input-box">Select Batch Type</label>
+        <div class="form-group form-check input-box">
+            <label class="form-check-label">
+                <input type="radio" name="batch" class="form-check-input" [ngModel]="enrollmentObj?.batch" ngModel value="weekday">WeekDay
+            </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="form-check-label">
+                <input type="radio" name="batch" class="form-check-input" ngModel value="weekend">WeekEnd
+            </label>
+        </div>
+        <div class="form-group input-box">
+            <label>Where did you here</label>
+            <select name="wheredid" class="form-control" #refWhere="ngModel" [ngModel]="enrollmentObj?.wheredid" ngModel required>
+                <option value="">select</option>
+                <option [value]="where" *ngFor="let where of wheredidcomeu">{{where}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="refWhere.invalid && refWhere.touched"> 
+                <div *ngIf="refWhere.hasError('required')">
+                this is required field
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="input-box btn">Update Data</button>
+    </div>
+    </form>
+</div>
+</div>

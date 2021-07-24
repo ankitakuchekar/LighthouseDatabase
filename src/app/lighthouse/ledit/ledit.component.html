@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <mat-toolbar>
+        <h1 style="color: black; font-size: 22px;">Welocome to Database Management System</h1>
+        <button class="btn logoutbtn" (click)="logout()">Logout</button>
+    </mat-toolbar>
+
+    <div class="content">
+        <div class="container">
+            <div class="title">Add Lighthouse Details</div>
+            <form #lighthouseData="ngForm" (ngSubmit)="updateLighthouseData(lighthouseData.value)">
+                <div  class="user-details">
+                    <div class="form-group input-box">
+                        <label>Enter Lighthouse Name</label>
+                        <input type="text" name="lname" class="form-control" #refFullname="ngModel" [ngModel]="lighthouseObj?.lname" ngModel required>
+                        <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                            <div *ngIf="refFullname.hasError('required')">
+                                this field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group input-box">
+                        <label>Enter Lighthouse Contact</label>
+                        <input type="text" name="lcontact" class="form-control" #refFullname="ngModel" [ngModel]="lighthouseObj?.lcontact" ngModel required>
+                        <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                            <div *ngIf="refFullname.hasError('required')">
+                                this field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group input-box">
+                        <label>Enter Lighthouse Address</label>
+                        <input type="text" name="laddress1" class="form-control" #refFullname="ngModel" [ngModel]="lighthouseObj?.laddress1" ngModel required>
+                        <div class="alert alert-danger" *ngIf="refFullname.invalid && refFullname.touched">
+                            <div *ngIf="refFullname.hasError('required')">
+                                this field is required
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group input-box">
+                        <input type="text" name="laddress2" placeholder="Address Line 2" class="form-control" [ngModel]="lighthouseObj?.laddress2" ngModel required>
+                    </div>
+                    <div class="form-group input-box">
+                        <label>Enter City Name:</label>
+                        <input type="text" name="laddresscity" class="form-control" #refFullname="ngModel" [ngModel]="lighthouseObj?.laddresscity" ngModel required>
+                    </div>
+                    <div class="form-group input-box">
+                        <label>Enter State Name </label>
+                        <input type="text" name="laddressstate" class="form-control" #refFullname="ngModel" [ngModel]="lighthouseObj?.laddressstate" ngModel required>
+                    </div>
+                    <div class="form-group input-box">
+                        <label>Enter Pincode</label>
+                        <input type="text" name="laddresspin" class="form-control" #refFullname="ngModel" [ngModel]="lighthouseObj?.laddresspin" ngModel required>
+                    </div>
+                 
+                    <button type="submit" class="input-box btn">Add Data</button>           
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

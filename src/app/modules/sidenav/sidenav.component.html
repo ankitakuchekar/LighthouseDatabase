@@ -1,0 +1,21 @@
+<p>sidenav works!</p>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened="true">
+        <mat-nav-list>
+            <mat-list-item>
+                <h4 matLine routerLink="/enrollstudent" routerLinkActive="active-link">Enrollment</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <h4 matLine routerLink="/coursestudent" routerLinkActive="active-link">Student Courses</h4>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button>
+                <mat-icon>Menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

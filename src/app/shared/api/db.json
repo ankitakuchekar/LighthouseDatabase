@@ -1,0 +1,238 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "admin@123"
+    }
+  ],
+  "student": [
+    {
+      "fullname": "Ankita Vinayak Kuchekar",
+      "contactno": "8975040173",
+      "email": "kuchekarankita128@gmail.com",
+      "qualification": "be",
+      "specific": "Computer",
+      "statusedu": "complete",
+      "yearpass": "2018",
+      "clgname": "PICT",
+      "city": "Pune",
+      "workexp": "0",
+      "org": "lighthouse",
+      "lhbranch": "Hadapsar-LH",
+      "course": "Angular",
+      "batch": "weekday",
+      "wheredid": "SMS",
+      "id": 1
+    },
+    {
+      "fullname": "Nikita Gajanan Chimte",
+      "contactno": "8888681047",
+      "email": "chimteaa@gmail.com",
+      "qualification": "hsc",
+      "statusedu": "complete",
+      "yearpass": "2011",
+      "clgname": "AM",
+      "city": "pune",
+      "workexp": "1",
+      "org": "hematiate",
+      "batch": "",
+      "wheredid": "",
+      "id": 2
+    },
+    {
+      "fullname": "Payal Jagtap",
+      "contactno": "1234567890",
+      "email": "payal@gmail.com",
+      "qualification": "bcom",
+      "specific": "maths",
+      "statusedu": "appear",
+      "clgname": "SP",
+      "city": "Pune",
+      "workexp": "1",
+      "org": "lighthouse",
+      "lhbranch": "Yerwada-LH",
+      "course": "Angular",
+      "batch": "weekend",
+      "wheredid": "Advertisement",
+      "id": 3
+    },
+    {
+      "fullname": "Sonal Solankar",
+      "contactno": "7895120215",
+      "email": "sonal@gmail.com",
+      "qualification": "bsc",
+      "specific": "computer",
+      "statusedu": "complete",
+      "yearpass": "2008",
+      "clgname": "GPP",
+      "city": "Pune",
+      "workexp": "5+",
+      "org": "hematiate",
+      "batch": "",
+      "wheredid": "",
+      "id": 4
+    },
+    {
+      "fullname": "Monika Kale",
+      "contactno": "897874578545",
+      "email": "monika@gmail.com",
+      "qualification": "msc",
+      "specific": "science",
+      "statusedu": "appear",
+      "clgname": "JSPM",
+      "city": "Mumbai",
+      "workexp": "1",
+      "org": "lighthouse",
+      "lhbranch": "Warje-LH",
+      "course": "Angular",
+      "batch": "weekday",
+      "wheredid": "Friend",
+      "id": 5
+    },
+    {
+      "fullname": "Snehal Sathe",
+      "contactno": "12457852455",
+      "email": "snehal@gmail.com",
+      "qualification": "ba",
+      "specific": "Language",
+      "statusedu": "complete",
+      "yearpass": "2019",
+      "clgname": "sp",
+      "city": "Pune",
+      "workexp": "0",
+      "org": "hematiate",
+      "batch": "weekend",
+      "wheredid": "SMS",
+      "id": 6
+    },
+    {
+      "fullname": "Prajakta Phule",
+      "contactno": "78786574677",
+      "email": "parjakta@gmail.com",
+      "qualification": "bca",
+      "specific": "Home Science",
+      "statusedu": "complete",
+      "yearpass": "2015",
+      "clgname": "JM",
+      "city": "Mumbai",
+      "workexp": "2",
+      "org": "hematiate",
+      "batch": "weekend",
+      "wheredid": "Friend",
+      "id": 7
+    }
+  ],
+  "courses": [
+    {
+      "cname": "Java",
+      "duration": "3",
+      "cfees": "1000",
+      "trainerName": "qwert",
+      "monyer": "year",
+      "id": 2
+    },
+    {
+      "cname": "Full Stack Development",
+      "duration": "1",
+      "cfees": "6000",
+      "trainerName": "abcdef",
+      "monyer": "months",
+      "id": 3
+    },
+    {
+      "cname": "Office Administration",
+      "duration": "1",
+      "cfees": "9000",
+      "trainerName": "loperop",
+      "monyer": "year",
+      "id": 4
+    },
+    {
+      "cname": "Mobile Repairing",
+      "duration": "2",
+      "cfees": "1000",
+      "trainerName": "veirkhk",
+      "monyer": "months",
+      "id": 5
+    },
+    {
+      "cname": "Ac Repairing",
+      "duration": "8",
+      "cfees": "900",
+      "trainerName": "nfkdnfk",
+      "monyer": "months",
+      "id": 6
+    },
+    {
+      "cname": "Ac Repairing",
+      "duration": "8",
+      "cfees": "900",
+      "trainerName": "nfkdnfk",
+      "monyer": "months",
+      "id": 7
+    }
+  ],
+  "lighthouse": [
+    {
+      "lname": "Hadapsar",
+      "lcontact": "1234567890",
+      "laddress1": "Gadital Hadapsar ",
+      "laddress2": "Bhaji Mandiai",
+      "laddresscity": "Pune",
+      "laddressstate": "Maharashtra",
+      "laddresspin": "411013",
+      "id": 1
+    },
+    {
+      "lname": "Aundh",
+      "lcontact": "78880 95967",
+      "laddress1": " Old Aundh Ward Office,Bremen Chowk",
+      "laddress2": "University, Aundh",
+      "laddresscity": "pune",
+      "laddressstate": "Maharashtra",
+      "laddresspin": "411007",
+      "id": 2
+    },
+    {
+      "lname": "Yerawada",
+      "lcontact": "95112 67564",
+      "laddress1": "Mother Teresa Nagar, Kashmiri Colony",
+      "laddress2": "Yerawada",
+      "laddresscity": "Pune",
+      "laddressstate": "Maharashtra",
+      "laddresspin": "411006",
+      "id": 3
+    },
+    {
+      "lname": "Bibvewadi",
+      "lcontact": "09876543221",
+      "laddress1": "Bus Depot, 3rd Floor, PMPML Building, Survey No. 659 Upper  ",
+      "laddress2": "Rajiv Gandhi Nagar, Bibwewadi",
+      "laddresscity": " Pune",
+      "laddressstate": "Maharashtra ",
+      "laddresspin": "411037",
+      "id": 4
+    },
+    {
+      "lname": "Gunj Peth",
+      "lcontact": "98346986109",
+      "laddress1": "Savitribai Phule Smarak, Near Lohiyanagar Police Station ",
+      "laddress2": " behind Central Fire Brigade, Ganj Peth",
+      "laddresscity": " Pune",
+      "laddressstate": "Maharashtra",
+      "laddresspin": "411042",
+      "id": 5
+    },
+    {
+      "lname": "Tingre Nagar",
+      "lcontact": "0923750932",
+      "laddress1": "Tingre Nagar",
+      "laddress2": "Bhaji Mandiai",
+      "laddresscity": "Pune",
+      "laddressstate": "Maharashtra",
+      "laddresspin": "411015",
+      "id": 6
+    }
+  ]
+}
